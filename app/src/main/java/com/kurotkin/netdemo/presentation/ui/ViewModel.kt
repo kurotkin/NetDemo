@@ -28,7 +28,6 @@ class ViewModel(private val app: Application) : AndroidViewModel(app) {
 
 
     fun download() {
-        _loadingStatus.postValue(true)
         viewModelScope.launch(Dispatchers.IO) {
             val apiService = (app as App).apiService
             val result = RepoImpl(apiService).getAllProducts()
@@ -41,7 +40,6 @@ class ViewModel(private val app: Application) : AndroidViewModel(app) {
                 }
                 else -> {}
             }
-            _loadingStatus.postValue(false)
         }
     }
 

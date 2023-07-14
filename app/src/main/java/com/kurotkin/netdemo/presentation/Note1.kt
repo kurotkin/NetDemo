@@ -30,7 +30,7 @@ class Note1() {
         CoroutineScope(Dispatchers.IO).launch {
             val productCart = productAPI.getMyProductCart()
             Log.d("Tag", productCart.toString())
-            methods(productAPI)
+            // methods(productAPI)
         }
     }
 

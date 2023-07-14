@@ -17,16 +17,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //Note1().primitive()
+
+        // TODO: Примитивный вариант
+        Note1().primitive()
 
         // TODO: Вариант лучше
-        viewModel = ViewModelProvider(this)[ViewModel::class.java]
-        viewModel.download()
-        initViews()
-        initObserves()
+//        viewModel = ViewModelProvider(this)[ViewModel::class.java]
+//        viewModel.download()
+//        initViews()
+//        initObserves()
     }
-
-
 
     private fun initViews(){
         rvList = findViewById(R.id.list)

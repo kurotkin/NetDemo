@@ -9,18 +9,14 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.DELETE
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
-import retrofit2.http.Path
+import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
 interface ApiService {
 
     // TODO: Простой способ
     @GET("/products")
+    @Headers("myHeader: test")
     suspend fun getMyProductCart(): ProductCart
 
     @GET("/products/{productId}")
@@ -34,6 +30,8 @@ interface ApiService {
 
     @DELETE("/products/{productId}")
     suspend fun deleteMyProduct(@Path("productId") id: Int): Product
+
+
 
 
     // TODO: Более структурированный
